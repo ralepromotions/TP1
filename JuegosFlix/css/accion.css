@@ -1,7 +1,7 @@
 .grid-container {
   display: grid;
-  min-width: 300px;
-  min-height: 500px;
+  min-width: 100%;
+  min-height: 100%;
   opacity: .93;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -15,9 +15,7 @@
 .grid-item img {
   width: 100%;
   height: 100%;
-  max-width: 500px;
-  max-height: 500px;
-  object-fit:inherit;
+  position: initial;
 }
 
 .button-container {
@@ -41,11 +39,17 @@
       .grid-item:last-child { display: none; }
     }
   }
-
    @media (min-width: 1000px) {
     .grid-container {
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(2, 1fr);
+      .grid-item:last-child { display: none; }
+    }
+  }
+    @media (max-width: 325px) {
+    .grid-container {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(8, 1fr);
       .grid-item:last-child { display: none; }
     }
   }
